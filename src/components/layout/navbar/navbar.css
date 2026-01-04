@@ -1,0 +1,19 @@
+
+.navbar{
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    background-color: red;
+    padding: 10px
+}
+
+.navbar-items{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.navbar-logo{
+    width: 30%;
+}
