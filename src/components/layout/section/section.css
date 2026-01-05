@@ -1,9 +1,136 @@
 .section {
-    border: 1px solid black;
-    height: 70vh;
-    margin: 7%;
-    display: flex;
-    flex-direction: row;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1e1b4b, #000);
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
+.section-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
 
+/* ---------------- CONTENT ---------------- */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-tag {
+  color: #818cf8;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: #6366f1;
+}
+
+.hero-description {
+  color: #9ca3af;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #6366f1;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #4f46e5;
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn.secondary:hover {
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* ---------------- VISUAL ---------------- */
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  width: 320px;
+  height: 320px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(168,85,247,0.15));
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  filter: blur(60px);
+  background: rgba(99,102,241,0.35);
+  z-index: -1;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(99,102,241,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .section-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
