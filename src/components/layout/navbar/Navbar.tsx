@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { TypingBrand } from "./../../ui/TypingBrand";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,20 +15,18 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-          {["Home", "Services", "Skills", "Blog", "About", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative hover:text-white transition
-                           after:content-[''] after:absolute after:left-0 after:-bottom-1
-                           after:h-[2px] after:w-0 after:bg-indigo-400
-                           after:transition-all hover:after:w-full"
-              >
-                {item}
-              </a>
-            )
-          )}
+          {["Home", "Services", "Skills", "Blog", "About", "Contact"].map((item) => (
+            <Link
+              key={item}
+              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              className="relative hover:text-white transition
+                        after:content-[''] after:absolute after:left-0 after:-bottom-1
+                        after:h-[2px] after:w-0 after:bg-indigo-400
+                        after:transition-all hover:after:w-full"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Menu Button */}
